@@ -44,6 +44,7 @@
     "dev:server": "nodemon --watch build --exec \"node build/bundle.js\"",
     "build:prod": "rm -rf build && rm -rf public && webpack  --config webpack.server.js && webpack -p --config webpack.user.prod.js --mode production",
     "webpack-prod": "webpack -p --progress --config webpack.user.prod.js --mode production",
+    "heroku-postbuild": "npm install && npm run build:prod",
     "dev": "npm run build-server && npm-run-all --parallel dev:*",
     "build-server": "webpack --config webpack.server.js",
     "precommit": "pretty-quick --staged",
