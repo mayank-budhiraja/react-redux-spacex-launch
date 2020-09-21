@@ -1,8 +1,9 @@
 {
-  "homepage": "https://mayank-budhiraja.github.io/react-redux-spacex-launch",
+  
   "name": "rocket_launch",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://mayank-budhiraja.github.io/react-redux-spacex-launch",
   "dependencies": {
     "@babel/polyfill": "^7.11.5",
     "@testing-library/jest-dom": "^4.2.4",
@@ -41,13 +42,12 @@
     "dev:build-server": "webpack --config webpack.server.js --watch",
     "dev:build-user": "webpack --config webpack.user.js --watch",
     "dev:server": "nodemon --watch build --exec \"node build/bundle.js\"",
-    "build:prod": "del build && del public && webpack  --config webpack.server.js && webpack -p --config webpack.user.prod.js --mode production",
-    "heroku-postbuild": "npm install && npm run build:prod",
+    "build:prod": "rm -rf build && rm -rf public && webpack  --config webpack.server.js && webpack -p --config webpack.user.prod.js --mode production",
     "webpack-prod": "webpack -p --progress --config webpack.user.prod.js --mode production",
     "dev": "npm run build-server && npm-run-all --parallel dev:*",
     "build-server": "webpack --config webpack.server.js",
     "precommit": "pretty-quick --staged",
-    "predeploy": "npm run build:prod",
+    "predeploy": "npm run build-server",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
