@@ -5,6 +5,7 @@
 - When page is refreshed, result is rendered on server side
 
 ## Demo 
+https://reactrocketlaunch.herokuapp.com/
 
 ## Run
 - git clone https://github.com/mayank-budhiraja/react-redux-spacex-launch.git
